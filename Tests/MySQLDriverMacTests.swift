@@ -132,18 +132,18 @@ class MySQLDriverMacTests: XCTestCase {
             try table.drop()
             
             let obj : MySQL.Row = [
-                "oint": Int?(0),
+                "oint": Int?(0) ?? 0,
                 "iint8" : Int8(-1),
                 "uint8": UInt8(1),
                 "int16" : Int16(-1),
                 "uint16": UInt16(100),
                 "id":Int(1),
-                "count":UInt?(10),
+                "count":UInt?(10) ?? 10,
                 "uint64" : UInt64(19999999999),
                 "int64" : Int64(-19999999999),
                 "ffloat" : Float(1.1),
                 "ddouble" : Double(1.1),
-                "ddate" : Date(dateString: "2015-11-10"),
+                "ddate" : Date(dateString: "2015-11-10") ?? Date(),
                 "str" : "test string",
                 "nsdata" : "test data".data(using: String.Encoding.utf8)!,
                 "uint8_array" : [UInt8]("test data uint8 array".utf8),
